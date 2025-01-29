@@ -1,0 +1,25 @@
+class Solution {
+public: long int divide(long int a, long int b) {
+    if(a == 0)
+        return 0;
+  
+    int sign = ((a < 0) ^ (b < 0)) ? -1 : 1;
+  
+    a = abs(a);
+    b = abs(b);
+
+    long long quotient = 0;
+      while (a >= b) {
+        a -= b;
+        ++quotient;
+    }
+    return quotient * sign;
+}
+
+int main() {
+    long long a = 43, b = -8;
+    cout << divide(a, b) << "\n";
+
+    return 0;
+}
+};
